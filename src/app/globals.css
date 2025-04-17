@@ -1,0 +1,44 @@
+@import "tailwindcss";
+
+:root {
+  --background: #0D1117;
+  --sessions: #161B22;
+  --hoverSessions: #212A35;
+  --button:  #1E4DB7;
+  --hoverButton: #3B82F6 ;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-sessions: var(--sessions);
+  --color-hoverSessions: var(--hoverSessions);
+  --color-button: var(--button);
+  --color-hoverButton: var(--hoverButton);
+
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+/*
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+background: var(--background);
+color: var(--foreground);
+*/
+body {
+  font-family: Montserrat, sans-serif;
+}
+
+@layer navbar {
+  .nav-desktop {
+    @apply flex text-base items-center gap-2 px-2 py-3 text-gray-400 hover:border-r-2 hover:text-white hover:border-button hover:bg-hoverSessions;
+  }
+
+  .nav-mobile {
+    @apply flex justify-center items-center px-3 py-3 text-gray-400 hover:border-r-1 hover:text-white hover:border-button hover:bg-hoverSessions;
+  }
+}
